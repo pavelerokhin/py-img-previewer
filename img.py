@@ -28,10 +28,9 @@ if __name__ == '__main__':
 	print(f"crating a PDF file {pdf_name}.pdf")
 
 	pdf = FPDF()
-	print(pdf)
+	pdf.add_page()
 	for image in files:
-    pdf.add_page()
-    pdf.image(image,x,y,w,h)
+		pdf.image(image, w=90)
 
-	pdf.output(pdf_name, "F")
+	pdf.output(f"./{pdf_name}.pdf", "F")
 
